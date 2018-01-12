@@ -7,7 +7,7 @@ package offer;
 public class N009_JumpFloorII {
     //f(n) = f(n-1) + f(n-2) + ... + f(1)
     public int JumpFloorII(int target) {
-        if(target <= 0) return -1;
-        return 1 << (target-1);
+        if (target <= 0) return -1;
+        return 1 << (target - 1);
     }
 }

@@ -1,6 +1,7 @@
 package offer;
 
 import common.TreeNode;
+
 import java.util.ArrayList;
 
 /**
@@ -34,27 +35,26 @@ public class N024_FindPath {
 //    }
 
 
-
     public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
         ArrayList<ArrayList<Integer>> allPath = new ArrayList<ArrayList<Integer>>();
         ArrayList<Integer> path = new ArrayList<Integer>();
-        findPath(root,target,path,allPath);
+        findPath(root, target, path, allPath);
         return allPath;
     }
 
-    public void findPath(TreeNode root, int target,ArrayList<Integer> path,ArrayList<ArrayList<Integer>> allPath){
-        if(root == null) return;
+    public void findPath(TreeNode root, int target, ArrayList<Integer> path, ArrayList<ArrayList<Integer>> allPath) {
+        if (root == null) return;
         target = target - root.val;
-        if(target < 0) return;
-        if(target == 0 && root.left == null && root.right == null) {
+        if (target < 0) return;
+        if (target == 0 && root.left == null && root.right == null) {
             path.add(root.val);
             allPath.add(new ArrayList<Integer>(path));
-            path.remove(path.size()-1);
+            path.remove(path.size() - 1);
             return;
         }
         path.add(root.val);
-        findPath(root.left,target,path,allPath);
-        findPath(root.right,target,path,allPath);
-        path.remove(path.size()-1);
+        findPath(root.left, target, path, allPath);
+        findPath(root.right, target, path, allPath);
+        path.remove(path.size() - 1);
     }
 }

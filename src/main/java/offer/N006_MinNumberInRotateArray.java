@@ -9,20 +9,20 @@ import org.junit.Test;
  * NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
  */
 public class N006_MinNumberInRotateArray {
-    public int minNumberInRotateArray(int [] array) {
-        if(array == null || array.length == 0) return 0;
-        if(array.length == 1) return array[0];
+    public int minNumberInRotateArray(int[] array) {
+        if (array == null || array.length == 0) return 0;
+        if (array.length == 1) return array[0];
 
         int low = 0;
-        int high = array.length-1;
-        while (low < high){
-            int mid = (low + high)/2;
+        int high = array.length - 1;
+        while (low < high) {
+            int mid = (low + high) / 2;
 
-            if(array[mid] < array[high]){
+            if (array[mid] < array[high]) {
                 high = mid;
-            }else if(array[mid] == array[high]){
-                high = high-1;
-            }else{
+            } else if (array[mid] == array[high]) {
+                high = high - 1;
+            } else {
                 low = mid + 1;
             }
         }
@@ -32,7 +32,7 @@ public class N006_MinNumberInRotateArray {
 
 
     @Test
-    public void test(){
-        System.out.println(minNumberInRotateArray(new int[]{4,5,1,2,3}));
+    public void test() {
+        System.out.println(minNumberInRotateArray(new int[]{4, 5, 1, 2, 3}));
     }
 }

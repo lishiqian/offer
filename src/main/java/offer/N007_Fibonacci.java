@@ -8,10 +8,10 @@ import org.junit.Test;
  */
 public class N007_Fibonacci {
     public int Fibonacci(int n) {
-        if(n <= 0) return 0;
+        if (n <= 0) return 0;
         int f1 = 1;
         int f2 = 1;
-        while (n-- > 2){
+        while (n-- > 2) {
             f1 = f1 + f2;
             f2 = f1 - f2;
         }
@@ -27,7 +27,7 @@ public class N007_Fibonacci {
 //    }
 
     @Test
-    public void test(){
+    public void test() {
         System.out.println(Fibonacci(5));
     }
 }

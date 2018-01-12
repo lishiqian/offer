@@ -15,12 +15,12 @@ public class N022_PrintFromTopToBottom {
         ArrayList<Integer> orderList = new ArrayList<Integer>();
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
 
-        if(root != null) queue.offer(root);
-        while (!queue.isEmpty()){
+        if (root != null) queue.offer(root);
+        while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
             orderList.add(node.val);
-            if(node.left != null) queue.offer(node.left);
-            if(node.right != null) queue.offer(node.right);
+            if (node.left != null) queue.offer(node.left);
+            if (node.right != null) queue.offer(node.right);
         }
 
         return orderList;

@@ -5,7 +5,7 @@ import org.junit.Test;
 
 /**
  * 题目描述
- 输入一个链表，输出该链表中倒数第k个结点。
+ * 输入一个链表，输出该链表中倒数第k个结点。
  */
 public class N014_FindKthToTail {
 //    public ListNode FindKthToTail(ListNode head, int k) {
@@ -30,13 +30,13 @@ public class N014_FindKthToTail {
         int len = 0;
         //一个指针先走K步
         ListNode cur = head;
-        for(int i = 0; i < k;i++){
-            if(cur == null) return null;
+        for (int i = 0; i < k; i++) {
+            if (cur == null) return null;
             cur = cur.next;
         }
 
         ListNode pre = head;
-        while (cur != null){
+        while (cur != null) {
             cur = cur.next;
             pre = pre.next;
         }
@@ -45,8 +45,8 @@ public class N014_FindKthToTail {
     }
 
     @Test
-    public void test(){
+    public void test() {
         ListNode creat = ListNode.creat(new int[]{1, 2, 3, 4, 5});
-        System.out.println(FindKthToTail(creat,1).val);
+        System.out.println(FindKthToTail(creat, 1).val);
     }
 }

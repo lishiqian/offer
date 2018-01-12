@@ -3,8 +3,6 @@ package offer;
 import common.RandomListNode;
 
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 
 public class N025_ComplexLinkedClone {
 
@@ -50,29 +48,29 @@ public class N025_ComplexLinkedClone {
 
     //hash表法
     public RandomListNode Clone(RandomListNode pHead) {
-        if(pHead == null) return null;
+        if (pHead == null) return null;
         // k 原节点 v 复制节点
-        HashMap<RandomListNode,RandomListNode> map = new HashMap<RandomListNode, RandomListNode>();
+        HashMap<RandomListNode, RandomListNode> map = new HashMap<RandomListNode, RandomListNode>();
         RandomListNode cur = pHead;
         RandomListNode copyHead = null;
         RandomListNode curCopy = null;
 
-        while (cur != null){
-            if(copyHead == null){
+        while (cur != null) {
+            if (copyHead == null) {
                 curCopy = new RandomListNode(cur.label);
                 copyHead = curCopy;
-            }else{
+            } else {
                 curCopy.next = new RandomListNode(cur.label);
                 curCopy = curCopy.next;
             }
-            map.put(cur,curCopy);
+            map.put(cur, curCopy);
             cur = cur.next;
         }
 
 
         cur = pHead;
         curCopy = copyHead;
-        while (cur != null){
+        while (cur != null) {
             curCopy.random = map.get(cur.random);
             cur = cur.next;
             curCopy = curCopy.next;

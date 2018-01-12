@@ -6,13 +6,13 @@ package offer;
  */
 public class N008_JumpFloor {
     public int JumpFloor(int target) {
-        if(target <= 0) return 0;
-        if(target == 1) return 1;
-        if(target == 2) return 2;
+        if (target <= 0) return 0;
+        if (target == 1) return 1;
+        if (target == 2) return 2;
 
         int f1 = 2;
         int f0 = 1;
-        while (target-- > 2){
+        while (target-- > 2) {
             f1 = f1 + f0;
             f0 = f1 - f0;
         }

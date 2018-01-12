@@ -8,32 +8,32 @@ import java.util.Stack;
 public class N003_PrintListFromTailToHead {
     public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
         ArrayList<Integer> resList = new ArrayList<Integer>();
-        print2(resList,listNode);
+        print2(resList, listNode);
         return resList;
     }
 
     /**
-     *  函数递归
+     * 函数递归
      */
-    private void print(ArrayList<Integer> resList,ListNode root){
-        if(root == null) return;
+    private void print(ArrayList<Integer> resList, ListNode root) {
+        if (root == null) return;
 
-        print(resList,root.next);
+        print(resList, root.next);
         resList.add(root.val);
     }
 
     /**
-     *  使用栈
+     * 使用栈
      */
-    private void print2(ArrayList<Integer> resList,ListNode root){
+    private void print2(ArrayList<Integer> resList, ListNode root) {
         Stack<ListNode> stack = new Stack<ListNode>();
 
-        while (root != null){
+        while (root != null) {
             stack.push(root);
             root = root.next;
         }
 
-        while (!stack.isEmpty()){
+        while (!stack.isEmpty()) {
             resList.add(stack.pop().val);
         }
     }
