@@ -1,5 +1,8 @@
 package common;
 
+/**
+ * 打印数组
+ */
 public class PrintString {
     public static String print(int[] arr){
         StringBuilder sb = new StringBuilder();

@@ -3,6 +3,9 @@ package common;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * 二叉树节点
+ */
 public class TreeNode {
 	public int val = 0;
 	public TreeNode left = null;
