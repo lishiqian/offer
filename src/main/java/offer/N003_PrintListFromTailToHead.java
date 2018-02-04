@@ -5,6 +5,10 @@ import common.ListNode;
 import java.util.ArrayList;
 import java.util.Stack;
 
+/**
+ * 题目描述
+ * 输入一个链表，从尾到头打印链表每个节点的值。
+ */
 public class N003_PrintListFromTailToHead {
     public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
         ArrayList<Integer> resList = new ArrayList<Integer>();
